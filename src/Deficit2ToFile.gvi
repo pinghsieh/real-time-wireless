@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile xmlns="http://www.ni.com/PlatformFramework">
+    <SourceModelFeatureSet>
+        <ParsableNamespace AssemblyFileVersion="3.0.0.56744" FeatureSetName="LabVIEW Virtual Instrument" MinimumParsableVersion="3.0.0.0" MinimumSemanticallyEquivalentVersion="3.0.0.0" Name="http://www.ni.com/LabVIEW.VI" Version="3.0.0.49154" />
+        <ParsableNamespace AssemblyFileVersion="3.0.0.56744" FeatureSetName="Editor" MinimumParsableVersion="3.0.0.0" MinimumSemanticallyEquivalentVersion="3.0.0.0" Name="http://www.ni.com/PlatformFramework" Version="3.0.0.49152" />
+        <ParsableNamespace AssemblyFileVersion="3.0.0.56744" FeatureSetName="LabVIEW Controls" MinimumParsableVersion="3.0.0.0" MinimumSemanticallyEquivalentVersion="3.0.0.0" Name="http://www.ni.com/Controls.LabVIEW.Design" Version="3.0.0.49152" />
+        <ParsableNamespace AssemblyFileVersion="3.0.0.56744" FeatureSetName="Common Language Components" MinimumParsableVersion="3.0.0.0" MinimumSemanticallyEquivalentVersion="3.0.0.0" Name="http://www.ni.com/MocCommon" Version="3.0.0.49152" />
+    </SourceModelFeatureSet>
+    <VirtualInstrument Id="1" xmlns="http://www.ni.com/LabVIEW.VI">
+        <Icon Id="2" ListViewIconCrop="0 0 50 50" xmlns="http://www.ni.com/PlatformFramework">
+            <IconPanel Height="[float]50" Id="3" Width="[float]50">
+                <IconTemplate ClipMargin="[SMThickness]3,3,3,3" Id="4" TemplateName="Gray">
+                    <Rectangle Fill="[SMSolidColorBrush]#ff727272" Id="5" IsHitTestVisible="[bool]False" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" />
+                    <Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" Id="6" IsHitTestVisible="[bool]False" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" />
+                    <FileNameText FileNameText="[bool]True" Font="[SMFont]0,6," HorizontalAlignment="[HorizontalAlignment]Left" Id="7" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]Deficit2ToFile" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" VerticalAlignment="[VerticalAlignment]Top" />
+                </IconTemplate>
+                <Canvas Background="[SMSolidColorBrush]#00ffffff" ClipToBounds="[bool]True" Id="8" Margin="[SMThickness]3,3,3,3" />
+            </IconPanel>
+        </Icon>
+        <ConnectorPane Height="50" Id="9" ListViewHeight="60" ListViewWidth="150" Width="50" xmlns="http://www.ni.com/PlatformFramework">
+            <ConnectorPaneTerminal ListViewHotspot="0 35" Parameter="52" />
+            <ConnectorPaneTerminal Hotspot="0 15" ListViewHotspot="0 50" Parameter="57" />
+            <ConnectorPaneTerminal Hotspot="0 25" />
+            <ConnectorPaneTerminal Hotspot="0 35" />
+            <ConnectorPaneTerminal Hotspot="0 45" />
+            <ConnectorPaneTerminal Hotspot="15 0" />
+            <ConnectorPaneTerminal Hotspot="25 0" />
+            <ConnectorPaneTerminal Hotspot="35 0" />
+            <ConnectorPaneTerminal Hotspot="50 5" />
+            <ConnectorPaneTerminal Hotspot="50 15" />
+            <ConnectorPaneTerminal Hotspot="50 25" />
+            <ConnectorPaneTerminal Hotspot="50 35" />
+            <ConnectorPaneTerminal Hotspot="50 45" />
+            <ConnectorPaneTerminal Hotspot="15 50" />
+            <ConnectorPaneTerminal Hotspot="25 50" />
+            <ConnectorPaneTerminal Hotspot="35 50" />
+        </ConnectorPane>
+        <MethodDocumentation xmlns="http://www.ni.com/PlatformFramework" />
+        <DiagramUnplacedItems Id="10" />
+        <FrontPanelUnplacedItems Id="11">
+            <NumericText BaseName="[string]String" Height="[float]22" Id="54" InteractionMode="[NumericTextBoxInteractionModes]ArrowKeys, ScrollWheel, ButtonClicks, TextInput" Label="[UIModel]55" Left="[float]612" Top="[float]376" Value="{DataItemBinding Id=52}" ValueFormatter="[string]LV:G6" ValueType="[Type]Double" Width="[float]69" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+            <Label Id="55" LabelAlignment="[PartAlignment]TopLeft" LabelOwner="[UIModel]54" Left="[float]612" Locked="[bool]True" Text="[string]Deficit Value" Top="[float]353" />
+            <PathSelector BaseName="[string]Path" BrowseDialogTitle="[string]Open File" Filter="[string]txt;*.csv" Height="[float]28" Id="60" InteractionMode="[PathSelectorInteractionModes]BrowseDialog, TextInput, AllowNullPathSelection" Name="[string]Deficit file path" Path="{DataItemBinding Id=57}" Width="[float]180" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+        </FrontPanelUnplacedItems>
+        <BlockDiagram Id="12">
+            <DataAccessor Bounds="355 -320 40 15" DataItem="52" Id="14" Label="45">
+                <Terminal DataType="Double" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
+            </DataAccessor>
+            <Wire Id="15" Joints="N(14:Value) N(17:number)" xmlns="http://www.ni.com/PlatformFramework" />
+            <NumberToFractionalString Bounds="575 -320 40 40" Id="17" />
+            <ConcatenateStrings Bounds="1020 -305 40 60" Id="18" Terminals="c0t0v=20, c1t0v=40, c2t0v=29, c3t0v=42, c4t0v=31, c5t0v=44" VerticalChunkCount="6" />
+            <Wire Id="20" Joints="N(17:F-format string) h(5) v(15) h(375) B(3) N(18:c0t0v) B(3) v(90) N(69:c0t0v)" xmlns="http://www.ni.com/PlatformFramework" />
+            <GetCurrentTime Bounds="550 -200 35 30" Id="21" />
+            <TimestampToDateTime Bounds="600 -200 35 30" Id="22" />
+            <PropertyNode Bounds="650 -200 150 45" HasErrorTerminals="False" Id="23" InstanceDataType="@1725945164_0" Template="List" Terminals="instance in=24~0:5, instance out~150:5, c0t0v=33~150:35">
+                <p.PropertyItem IsWrite="False">
+                    <PathElement>fractional second</PathElement>
+                </p.PropertyItem>
+            </PropertyNode>
+            <Wire Id="24" Joints="N(22:date time rec) N(23:instance in)" xmlns="http://www.ni.com/PlatformFramework" />
+            <GetDateTimeString Bounds="825 -245 35 30" Id="25" />
+            <Literal Bounds="785.4 -225 25.6 15.2" DataType="Boolean" Facade="NationalInstruments.MocCommon.Modeling.IBooleanBehavior" Id="26" Label="46" xmlns="http://www.ni.com/MocCommon">
+                <p.Data>True</p.Data>
+                <BooleanBehavior />
+            </Literal>
+            <Wire Id="27" Joints="N(26:Out) N(25:want seconds? (F\))" xmlns="http://www.ni.com/PlatformFramework" />
+            <NumberToFractionalString Bounds="820 -170 40 40" Id="28" />
+            <Wire Id="29" Joints="N(25:time string) h(7) v(-60) h(118) B(3) N(18:c2t0v) B(3) v(80) N(69:c1t0v)" xmlns="http://www.ni.com/PlatformFramework" />
+            <Wire Id="30" Joints="N(21:current time) h(8) B(1) N(22:time stamp) B(1) v(-35) N(25:time stamp)" xmlns="http://www.ni.com/PlatformFramework" />
+            <Wire Id="31" Joints="N(28:F-format string) h(120) v(-25) B(2) N(69:c2t0v) B(2) v(-70) N(18:c4t0v)" xmlns="http://www.ni.com/PlatformFramework" />
+            <Wire Id="32" Joints="N(34:Out) N(28:precision (6\))" xmlns="http://www.ni.com/PlatformFramework" />
+            <Wire Id="33" Joints="N(23:c0t0v) N(28:number)" xmlns="http://www.ni.com/PlatformFramework" />
+            <Literal Bounds="750.8 -150 39.2 16" DataType="Int16" Facade="NationalInstruments.MocCommon.Modeling.INumericBehavior" Id="34" Label="47" xmlns="http://www.ni.com/MocCommon">
+                <p.Data>3</p.Data>
+                <NumericBehavior Interpretation="Exact" ValueFormatter="LV:" />
+            </Literal>
+            <Literal Bounds="563 -300 12 10" DataType="Int16" Facade="DockedConstantFacade" Id="37" Label="49" xmlns="http://www.ni.com/MocCommon">
+                <p.Data>2</p.Data>
+                <NumericBehavior Interpretation="Exact" ValueFormatter="LV:" />
+                <DockedConstantFacade UndockedBounds="475 350 40 15" />
+            </Literal>
+            <Wire Facade="WireInvisibleFacade" Id="38" Joints="N(37:Out) N(17:precision (6\))" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <Literal Bounds="1008 -295 12 10" DataType="String" Facade="DockedConstantFacade" Id="39" Label="50" xmlns="http://www.ni.com/MocCommon">
+                <p.Data>" "</p.Data>
+                <StringBehavior />
+                <DockedConstantFacade UndockedBounds="885 320 40 15" />
+            </Literal>
+            <Wire Facade="WireInvisibleFacade" Id="40" Joints="N(39:Out) N(18:c1t0v)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <Literal Bounds="1008 -275 12 10" DataType="String" Facade="DockedConstantFacade" Id="41" Label="51" xmlns="http://www.ni.com/MocCommon">
+                <p.Data>" "</p.Data>
+                <StringBehavior />
+                <DockedConstantFacade UndockedBounds="885 365 40 15" />
+            </Literal>
+            <Wire Facade="WireInvisibleFacade" Id="42" Joints="N(41:Out) N(18:c3t0v)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <Literal Bounds="1008 -255 12 10" DataType="String" Facade="DockedConstantFacade" Id="43" xmlns="http://www.ni.com/MocCommon">
+                <p.Data>"\r\n"</p.Data>
+                <StringBehavior />
+                <DockedConstantFacade UndockedBounds="865 515 40 29" />
+            </Literal>
+            <Wire Facade="WireInvisibleFacade" Id="44" Joints="N(43:Out) N(18:c5t0v)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <TextNode AttachedTo="14" Bounds="283 -320 67 16" Id="45" Text="Deficit Value" xmlns="http://www.ni.com/PlatformFramework" />
+            <TextNode AttachedTo="26" Bounds="785.4 -225 0 0" Id="46" Text="show seconds?" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <TextNode AttachedTo="34" Bounds="750.8 -150 0 0" Id="47" Text="precision" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <TextNode AttachedTo="37" Bounds="563 -300 0 0" Id="49" Text="precision" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <TextNode AttachedTo="39" Bounds="1008 -295 0 0" Id="50" Text="string" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <TextNode AttachedTo="41" Bounds="1008 -275 0 0" Id="51" Text="string" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <DataAccessor Bounds="975 -355 40 15" DataItem="57" Id="59" Label="61">
+                <Terminal DataType="Path" Direction="Output" Hotspot="40 5" Id="Path" xmlns="http://www.ni.com/PlatformFramework" />
+            </DataAccessor>
+            <TextNode AttachedTo="59" Bounds="889 -355 81 16" Id="61" Text="Deficit file path" xmlns="http://www.ni.com/PlatformFramework" />
+            <BuildArray Bounds="1060 -215 40 30" CanToggle="False" Id="69" Terminals="outArray=78, c0t0v=20, c1t0v=29, c2t0v=31" VerticalChunkCount="3" />
+            <MethodCall Bounds="1200 -235 40 40" Id="70" Target="Write\ to\ Spreadsheet\ File\ \(string\)\.gvi">
+                <p.MethodDeclaration>
+                    <MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+                        <Parameter Id="L0" Desc="file path" />
+                        <Parameter Id="L1" Desc="2D data" />
+                        <Parameter Id="L2" Desc="1D data" />
+                        <Parameter Id="L3" Desc="append to file?" />
+                        <Parameter Id="B1" Desc="delimiter" />
+                        <Parameter Id="B0" Desc="transpose?" />
+                        <Parameter Id="T0" Desc="format" />
+                        <Parameter Id="R0" Desc="new file path" />
+                    </MethodDeclaration>
+                </p.MethodDeclaration>
+                <Terminal DataType="Path" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+                <Terminal DataType="String[,]" Direction="Input" Hotspot="0 15" Id="L1" xmlns="http://www.ni.com/PlatformFramework" />
+                <Terminal DataType="String[]" Direction="Input" Hotspot="0 25" Id="L2" xmlns="http://www.ni.com/PlatformFramework" />
+                <Terminal DataType="Boolean" Direction="Input" Hotspot="0 35" Id="L3" xmlns="http://www.ni.com/PlatformFramework" />
+                <Terminal DataType="String" Direction="Input" Hotspot="25 40" Id="B1" xmlns="http://www.ni.com/PlatformFramework" />
+                <Terminal DataType="Boolean" Direction="Input" Hotspot="15 40" Id="B0" xmlns="http://www.ni.com/PlatformFramework" />
+                <Terminal DataType="String" Direction="Input" Hotspot="15 0" Id="T0" xmlns="http://www.ni.com/PlatformFramework" />
+                <Terminal DataType="Path" Direction="Output" Hotspot="40 5" Id="R0" Usage="Optional" xmlns="http://www.ni.com/PlatformFramework" />
+            </MethodCall>
+            <Literal Bounds="1145 -205 25.5999756 15.1999969" DataType="Boolean" Facade="NationalInstruments.MocCommon.Modeling.IBooleanBehavior" Id="72" Label="76" xmlns="http://www.ni.com/MocCommon">
+                <p.Data>True</p.Data>
+                <BooleanBehavior />
+            </Literal>
+            <Wire Id="73" Joints="N(72:Out) N(70:L3)" xmlns="http://www.ni.com/PlatformFramework" />
+            <Literal Bounds="1140 -175 39.19995 16" DataType="String" Facade="NationalInstruments.MocCommon.Modeling.IStringBehavior" Id="74" Label="77" xmlns="http://www.ni.com/MocCommon">
+                <p.Data>,</p.Data>
+                <StringBehavior />
+            </Literal>
+            <Wire Id="75" Joints="N(74:Out) h(45.80005) N(70:B1)" xmlns="http://www.ni.com/PlatformFramework" />
+            <TextNode AttachedTo="72" Bounds="1145 -205 0 0" Id="76" Text="append to file?" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <TextNode AttachedTo="74" Bounds="1140 -175 0 0" Id="77" Text="delimiter" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+            <Wire Id="78" Joints="N(69:outArray) N(70:L2)" xmlns="http://www.ni.com/PlatformFramework" />
+            <Wire Id="79" Joints="N(59:Path) h(175) v(120) N(70:L0)" xmlns="http://www.ni.com/PlatformFramework" />
+        </BlockDiagram>
+        <CPFrontPanel Height="[float]1600" Id="13" Width="[float]2000" />
+        <DataItem CallDirection="Input" CallIndex="0" DataType="Double" Id="52" Name="Deficit Value">
+            <p.DefaultValue>0x0</p.DefaultValue>
+        </DataItem>
+        <DataItem CallDirection="Input" CallIndex="1" DataType="Path" Id="57" Name="Deficit file path">
+            <p.DefaultValue>
+                <Path a="1" />
+            </p.DefaultValue>
+        </DataItem>
+        <DataTypeReferenceTable xmlns="http://www.ni.com/PlatformFramework">
+            <p.TypeReference TypeId="1725945164_0">
+                <Class Id="1" Name="" Cluster="">
+                    <ClosedGenericParameters />
+                    <GenericTypeDefinition>
+                        <Void />
+                    </GenericTypeDefinition>
+                    <BaseType>
+                        <Void />
+                    </BaseType>
+                    <Interfaces />
+                    <Members>
+                        <Field FieldAccessPolicy="ReadWrite" Name="fractional second">
+                            <DataType>
+                                <Double />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="second">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="minute">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="hour">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="day of month">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="month">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="year">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="day of week">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="day of year">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                        <Field FieldAccessPolicy="ReadWrite" Name="DST">
+                            <DataType>
+                                <Int32 />
+                            </DataType>
+                        </Field>
+                    </Members>
+                </Class>
+            </p.TypeReference>
+        </DataTypeReferenceTable>
+    </VirtualInstrument>
+</SourceFile>
